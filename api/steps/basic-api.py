@@ -10,6 +10,9 @@ def step_impl(context, protocol, host, port, endpoint):
 
 @then('I should receive a {status_code} response')
 def step_impl(context, status_code):
-    print("response: {!r}".format(context.response.status_code))
-    print("status_code: %s" % status_code)
     assert int(context.response.status_code) == int(status_code)
+
+
+@given('I have a customer account')
+def step_impl(context):
+
